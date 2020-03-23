@@ -1,5 +1,7 @@
 package org.tracker.issue.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.tracker.issue.entities.User;
@@ -19,6 +21,11 @@ public class UserService {
 		newUser.setRole(user.getRole());
 		return userRepository.save(newUser);
 		
+	}
+	
+	public List<User> getUsers()
+	{
+		return userRepository.findAll();
 	}
 
 }

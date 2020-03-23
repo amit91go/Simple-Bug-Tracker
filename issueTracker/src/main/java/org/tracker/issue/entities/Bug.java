@@ -2,16 +2,25 @@ package org.tracker.issue.entities;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
+
 import org.springframework.data.annotation.Id;
 
 public class Bug {
 	
 	@Id
 	private String id;
+	@NotBlank(message="Title can not be null.")
 	private String title;
+	@NotBlank(message="Description can not be null.")
 	private String description;
+	@NotNull(message="Status can not be null.")
 	private Status status;
+	@NotBlank(message="AssignedTo can not be null.")
 	private String assignedTo;
+	@NotBlank(message="Project can not be null.")
 	private String fromProject; 
 	private Date createdOn;
 	private String createdBy;

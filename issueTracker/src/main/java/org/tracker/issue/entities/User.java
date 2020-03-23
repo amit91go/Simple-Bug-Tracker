@@ -1,13 +1,21 @@
 package org.tracker.issue.entities;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 
 public class User {
 	
-		@Id
+		@Id 
 		private String id;
-		private String name;
+		@NotBlank(message="Name can not be null.")
+		private String name; 
+		@NotBlank(message="Email can not be null.")
+		@Email(message = "Enter a valid email address.")
 		private String email;
+		@NotNull(message="Role can not be null.")
 		private Role role;
 		
 		
