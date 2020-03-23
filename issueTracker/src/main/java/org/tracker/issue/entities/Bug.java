@@ -2,8 +2,11 @@ package org.tracker.issue.entities;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+
 public class Bug {
 	
+	@Id
 	private String id;
 	private String title;
 	private String description;

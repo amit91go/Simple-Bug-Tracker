@@ -3,8 +3,11 @@ package org.tracker.issue.entities;
 import java.util.Date;
 import java.util.Map;
 
+import org.springframework.data.annotation.Id;
+
 public class Project {
 	
+	@Id
 	private String id;
 	private String title;
 	private String cretedBy;
